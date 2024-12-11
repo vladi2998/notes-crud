@@ -1,3 +1,25 @@
+Running the app via Docker Compose
+=============
+1. Build the Docker image:
+```bash
+docker-compose build
+```
+
+2. Run the Docker container:
+```bash
+docker-compose up
+```
+
+3. Stop the Docker container:
+```bash
+docker-compose down
+```
+
+4. Run the Docker container with debug mode on (optional):
+```bash
+docker-compose -f docker-compose.yml -f docker-compose.debug.yml up
+```
+
 Running the app locally
 =============
 1. Creating python virtual enviroment (optional):
@@ -20,28 +42,6 @@ flask --app main run
 4. Running the app with debug mode on (optional):
 ```bash
 flask --debug --app main run
-```
-
-Running the app via Docker Compose
-=============
-1. Build the Docker image:
-```bash
-docker-compose build
-```
-
-2. Run the Docker container:
-```bash
-docker-compose up
-```
-
-3. Stop the Docker container:
-```bash
-docker-compose down
-```
-
-4. Run the Docker container with debug mode on (optional):
-```bash
-docker-compose -f docker-compose.yml -f docker-compose.debug.yml up
 ```
 
 Running the app via Dockerfile
