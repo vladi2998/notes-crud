@@ -65,7 +65,7 @@ class NoteService:
         if note is None or note.deleted_at is not None:
             return None
 
-        note.updated_at = dt.datetime.utcnow()
+        note.updated_at = dt.datetime.now(dt.UTC)
         if 'title' in data:
             note.title = data['title']
         if 'content' in data:
@@ -89,7 +89,7 @@ class NoteService:
         if note is None or note.deleted_at is not None:
             return None
 
-        note.deleted_at = dt.datetime.utcnow()
+        note.deleted_at = dt.datetime.now(dt.UTC)
 
         db.session.commit()
         return note

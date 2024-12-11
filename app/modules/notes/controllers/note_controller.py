@@ -38,7 +38,7 @@ class NoteController:
     def get_notes(self):
         notes = NoteService.get_notes()
         serialized_notes = self.response_schema.dump(notes, many=True)
-        return jsonify(serialized_notes), 201
+        return jsonify(serialized_notes), 200
 
     def update_note(self, note_id: str, data: dict):
         try:

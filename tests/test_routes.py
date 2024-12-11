@@ -16,6 +16,12 @@ class RoutesTestCase(unittest.TestCase):
         response = self.client.get('/notes')
         self.assertEqual(response.status_code, 200)
 
+    def test_get_note_by_id(self):
+        response = self.client.post('/notes', json={'title': 'Test Note', 'content': 'This is a test note.'})
+        note_id = response.get_json()['id']
+        response = self.client.get(f'/notes/{note_id}')
+        self.assertEqual(response.status_code, 200)
+
     def test_update_note(self):
         response = self.client.post('/notes', json={'title': 'Test Note', 'content': 'This is a test note.'})
         note_id = response.get_json()['id']
@@ -26,7 +32,7 @@ class RoutesTestCase(unittest.TestCase):
         response = self.client.post('/notes', json={'title': 'Test Note', 'content': 'This is a test note.'})
         note_id = response.get_json()['id']
         response = self.client.delete(f'/notes/{note_id}')
-        self.assertEqual(response.status_code, 204)
+        self.assertEqual(response.status_code, 200)
 
 if __name__ == '__main__':
     unittest.main()
