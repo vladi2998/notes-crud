@@ -8,6 +8,4 @@ class Note(db.Model):
     content = db.Column(db.Text, nullable=False)
     created_at = db.Column(db.DateTime, default=dt.datetime.utcnow)
     updated_at = db.Column(db.DateTime, default=dt.datetime.utcnow, onupdate=dt.datetime.utcnow)
-    is_deleted = db.Column(db.Boolean, default=False)
-
-notes = []
+    deleted_at = db.Column(db.DateTime, nullable=True, default=None)
