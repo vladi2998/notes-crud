@@ -37,7 +37,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/notes",
+					"raw": "http://127.0.0.1:5000/api/v1/notes",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -47,6 +47,8 @@
 					],
 					"port": "5000",
 					"path": [
+						"api",
+						"v1",
 						"notes"
 					]
 				},
@@ -74,7 +76,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/notes",
+					"raw": "http://127.0.0.1:5000/api/v1/notes",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -84,6 +86,8 @@
 					],
 					"port": "5000",
 					"path": [
+						"api",
+						"v1",
 						"notes"
 					]
 				},
@@ -97,7 +101,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/notes/",
+					"raw": "http://127.0.0.1:5000/api/v1/notes/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -107,6 +111,8 @@
 					],
 					"port": "5000",
 					"path": [
+						"api",
+						"v1",
 						"notes",
 						""
 					]
@@ -136,7 +142,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"title\": \"Test title updated 1\"\n}",
+					"raw": "{\n    \"title\": \"Test title updated\",\n    \"content\": \"Test content updated\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -144,7 +150,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/notes/",
+					"raw": "http://127.0.0.1:5000/api/v1/notes/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -154,6 +160,8 @@
 					],
 					"port": "5000",
 					"path": [
+						"api",
+						"v1",
 						"notes",
 						""
 					]
@@ -192,7 +200,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/notes/",
+					"raw": "http://127.0.0.1:5000/api/v1/notes/",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -202,6 +210,8 @@
 					],
 					"port": "5000",
 					"path": [
+						"api",
+						"v1",
 						"notes",
 						""
 					]
