@@ -1,9 +1,13 @@
 from flask import Blueprint, request
 from app.modules.notes.controllers.note_controller import NoteController
+from dotenv import load_dotenv
+import os
 
-bp = Blueprint('routes', __name__)
+load_dotenv()
 
-@bp.route('/notes', methods=['POST'])
+bp = Blueprint(f'routes_{os.getenv('API_VERSION')}', __name__, url_prefix=f'/api/{os.getenv('API_VERSION')}/notes')
+
+@bp.route('', methods=['POST'])
 def create_note():
     """
     Creates a new note.
@@ -24,7 +28,7 @@ def create_note():
     data = request.get_json()
     return NoteController().create_note(data)
 
-@bp.route('/notes', methods=['GET'])
+@bp.route('', methods=['GET'])
 def get_notes():
     """
     Get all notes route method
@@ -37,7 +41,7 @@ def get_notes():
     """
     return NoteController().get_notes()
 
-@bp.route('/notes/<note_id>', methods=['GET'])
+@bp.route('/<note_id>', methods=['GET'])
 def get_note_by_id(note_id: str):
     """
     Get note by id
@@ -51,7 +55,7 @@ def get_note_by_id(note_id: str):
     """
     return NoteController().get_note_by_id(note_id)
 
-@bp.route('/notes/<note_id>', methods=['PUT'])
+@bp.route('/<note_id>', methods=['PUT'])
 def update_note(note_id: str):
     """
     Update a note route method
@@ -70,7 +74,7 @@ def update_note(note_id: str):
     data = request.get_json()
     return NoteController().update_note(note_id, data)
 
-@bp.route('/notes/<note_id>', methods=['DELETE'])
+@bp.route('/<note_id>', methods=['DELETE'])
 def delete_note(note_id):
     """
     Delete a note route method
