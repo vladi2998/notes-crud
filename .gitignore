@@ -1,2 +1,3 @@
 /notes-crud-venv/
 .env
+__pycache__/
